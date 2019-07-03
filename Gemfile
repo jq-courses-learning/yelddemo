@@ -13,6 +13,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'jquery-rails'
 gem 'hirb'
+gem 'carrierwave', '~> 2.0.0.rc'
+gem "fog-aws"
+gem "mime-types"
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
