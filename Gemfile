@@ -16,6 +16,7 @@ gem 'hirb'
 gem 'carrierwave', '~> 2.0.0.rc'
 gem "fog-aws"
 gem "mime-types"
+gem "mini_magick"
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
