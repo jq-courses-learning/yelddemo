@@ -1,0 +1,28 @@
+.jumbotron {
+	background-color: aquamarine;
+	border: 1px solid;
+	h2 {
+		font-weight: bold;
+		color: darkslategrey;
+	}
+}
+
+.navbar-light {
+	.navbar-brand {
+		font-weight: bold;
+		font-size: 20px;
+		color: red;
+	}
+
+	.navbar-collapse .navbar-nav .nav-item {
+		a {
+			color: black;
+			font-weight: bold;
+		}
+	}
+}
+
+.container-fluid {
+	padding: 10px 120px;
+}
+

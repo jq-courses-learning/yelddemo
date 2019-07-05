@@ -1,33 +1,58 @@
-<p id="notice"><%= notice %></p>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title></title>
+</head>
+<body>
+  <p id="notice"><%= notice %></p>
 
-<h1>Restaurants</h1>
+  <div class="jumbotron">
+    <h1 class="display-4">Yelpdemo is the best way to find reviews on local restaurants.</h1>
+    <h2 class="lead">Explore the favourite diners, pastry shops and eateries in your community.</h2>
+    <hr class="my-4">
+    <p>Leave reviews and rating for your fellow foodies.</p>
+    <%= link_to 'Add new restaurant.', new_restaurant_path, class: "btn btn-info" %>
+  </div>
 
-<table class="table-striped table-bordered">
-  <thead>
-    <tr class="table-primary">
-      <th >Name</th>
-      <th>Address</th>
-      <th>Phone</th>
-      <th>Website</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <div class="row">
+    <div class="col" align="center">
+      <table class="table-striped table-bordered">
+        <thead>
+        <tr class="table-primary">
+          <th >Name</th>
+          <th>Address</th>
+          <th>Phone</th>
+          <th>Website</th>
+          <th colspan="3"></th>
+        </tr>
+        </thead>
 
-  <tbody>
-    <% @restaurants.each do |restaurant| %>
-      <tr>
-        <td class="table-info"><%= restaurant.name %></td>
-        <td><%= restaurant.address %></td>
-        <td><%= restaurant.phone %></td>
-        <td><%= restaurant.website %></td>
-        <td><%= link_to 'Show', restaurant, class: "btn btn-link" %></td>
-        <td><%= link_to 'Edit', edit_restaurant_path(restaurant), class: "btn btn-link" %></td>
-        <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <tbody>
+        <% @restaurants.each do |restaurant| %>
+          <tr>
+            <td class="table-info"><%= restaurant.name %></td>
+            <td><%= restaurant.address %></td>
+            <td><%= restaurant.phone %></td>
+            <td><%= restaurant.website %></td>
+            <td><%= link_to 'Show', restaurant, class: "btn btn-link" %></td>
+            <td><%= link_to 'Edit', edit_restaurant_path(restaurant), class: "btn btn-link" %></td>
+            <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
 
-<br>
+  <br>
+    <div class="row">
+      <div class="col">
+        <img src="https://joao-yelpdemo.s3.us-east-2.amazonaws.com/photo1.jpeg" class="img-fluid" alt="Responsive image">
+      </div>
+    </div>
 
-<%= link_to 'New Restaurant', new_restaurant_path %>
+</body>
+</html>
