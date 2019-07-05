@@ -17,6 +17,7 @@ gem 'carrierwave', '~> 2.0.0.rc'
 gem "fog-aws"
 gem "mime-types"
 gem "mini_magick"
+gem 'devise'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
