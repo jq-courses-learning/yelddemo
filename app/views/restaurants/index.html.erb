@@ -7,8 +7,6 @@
   <title></title>
 </head>
 <body>
-  <p id="notice"><%= notice %></p>
-
   <div class="jumbotron">
     <h1 class="display-4">Yelpdemo is the best way to find reviews on local restaurants.</h1>
     <h2 class="lead">Explore the favourite diners, pastry shops and eateries in your community.</h2>
@@ -36,7 +34,7 @@
             <td class="table-info"><%= restaurant.name %></td>
             <td><%= restaurant.address %></td>
             <td><%= restaurant.phone %></td>
-            <td><%= restaurant.website %></td>
+            <td><%= link_to restaurant.website, restaurant.website %></td>
             <td><%= link_to 'Show', restaurant, class: "btn btn-link" %></td>
             <td><%= link_to 'Edit', edit_restaurant_path(restaurant), class: "btn btn-link" %></td>
             <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %></td>
