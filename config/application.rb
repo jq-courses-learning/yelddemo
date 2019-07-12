@@ -30,5 +30,6 @@ module Yelpdemo
     config.generators.system_tests = nil
     config.assets.paths << Rails.root.join('vendor', 'assets', 'fonts')
     config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
+    config.serve_static_assets = true
   end
 end
