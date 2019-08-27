@@ -2,12 +2,15 @@
 <p id="notice"><%= notice %></p>
 
 <div class="row">
-  <div class="col-md-5 col-sm-12" align="center">
+  <div class="col-md-3 col-sm-12" align="center">
     <%= image_tag @restaurant.image_url %>
 
     <h2>
       <%= @restaurant.name %>
     </h2>
+
+    <div class="review-rating" data-score="<%= @avg_rating %>"></div>
+    <p><%= "#{@reviews.length} reviews" %></p>
 
     <p>
       <strong>Address:</strong>
@@ -28,16 +31,22 @@
     <%= link_to 'Edit', edit_restaurant_path(@restaurant), class: "btn btn-link" %> |
     <%= link_to 'Back', restaurants_path, class: "btn btn-link" %>
   </div>
-  <div class="col-md-7 col-sm-12" align="center">
+  <div class="col-md-9 col-sm-12" align="center">
     <% if @reviews.blank? %>
       <h3>No Reviews yet!</h3>
     <% else %>
-      <% @reviews.each do |review| %>
-        <div class="review-rating" data-score="<%= review.rating %>"></div>
-        <a><%= review.comment %></a>
-        <br>
-      <% end %>
+      <table class="table">
+        <tbody>
+          <% @reviews.each do |review| %>
+            <tr>
+              <td>
+                <div class="review-rating" data-score="<%= review.rating %>"></div>
+                <p><%= h(review.comment).gsub(/\n/, '<br/>').html_safe %></p>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
     <% end %>
   </div>
 </div>
-
