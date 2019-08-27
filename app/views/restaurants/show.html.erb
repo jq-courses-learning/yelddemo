@@ -1,3 +1,4 @@
+
 <p id="notice"><%= notice %></p>
 
 <div class="row">
@@ -32,7 +33,7 @@
       <h3>No Reviews yet!</h3>
     <% else %>
       <% @reviews.each do |review| %>
-        <a><%= review.rating %></a>
+        <div class="review-rating" data-score="<%= review.rating %>"></div>
         <a><%= review.comment %></a>
         <br>
       <% end %>
